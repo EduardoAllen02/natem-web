@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400">
+<defs><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2"/><feColorMatrix values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .5 0"/></filter><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbe6ee"/><stop offset=".55" stop-color="#eadcf5"/><stop offset="1" stop-color="#cdb5ea"/></linearGradient></defs>
+<rect width="640" height="400" fill="url(#bg)"/>
+<circle cx="560" cy="70" r="120" fill="#fff" opacity=".45"/><circle cx="604" cy="360" r="90" fill="#c8e773" opacity=".5"/>
+<rect x="20" y="24" width="366" height="352" rx="24" fill="#fff" fill-opacity="0.6" stroke="#fff" stroke-opacity=".9"/>
+<text x="40" y="58" font-size="11" font-weight="700" fill="#663a80" font-family="Segoe UI, system-ui, Arial, sans-serif" letter-spacing="1.2">CONCILIACIÓN · MARZO</text>
+<text x="40" y="84" font-size="20" font-weight="600" fill="#17141a" font-family="Segoe UI, system-ui, Arial, sans-serif" >Facturas contra banco</text>
+<rect x="38" y="100" width="330" height="8" rx="4" fill="#fff"/><rect x="38" y="100" width="262" height="8" rx="4" fill="#663a80"/>
+<rect x="38" y="122" width="330" height="40" rx="12" fill="#fff"/>
+<circle cx="60" cy="142" r="9" fill="#c8e773"/><path d="m55.500 142 3 3 6-6.500" stroke="#17141a" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="80" y="147" font-size="13" font-weight="500" fill="#17141a" font-family="Segoe UI, system-ui, Arial, sans-serif" >Proveedor A · factura 1042</text><text x="354" y="147" font-size="13" font-weight="600" fill="#5d5564" font-family="Segoe UI, system-ui, Arial, sans-serif" text-anchor="end">$18,400</text>
+<rect x="38" y="168" width="330" height="40" rx="12" fill="#fff"/>
+<circle cx="60" cy="188" r="9" fill="#c8e773"/><path d="m55.500 188 3 3 6-6.500" stroke="#17141a" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="80" y="193" font-size="13" font-weight="500" fill="#17141a" font-family="Segoe UI, system-ui, Arial, sans-serif" >Renta de oficina</text><text x="354" y="193" font-size="13" font-weight="600" fill="#5d5564" font-family="Segoe UI, system-ui, Arial, sans-serif" text-anchor="end">$22,000</text>
+<rect x="38" y="214" width="330" height="40" rx="12" fill="#fff"/>
+<circle cx="60" cy="234" r="9" fill="#f6c66b"/><path d="M60 229v6" stroke="#17141a" stroke-width="2.200" stroke-linecap="round"/><circle cx="60" cy="239" r="1.300" fill="#17141a"/>
+<text x="80" y="239" font-size="13" font-weight="500" fill="#17141a" font-family="Segoe UI, system-ui, Arial, sans-serif" >Cliente B · depósito</text><text x="354" y="239" font-size="13" font-weight="600" fill="#17141a" font-family="Segoe UI, system-ui, Arial, sans-serif" text-anchor="end">$9,750</text>
+<rect x="38" y="260" width="330" height="40" rx="12" fill="#fff"/>
+<circle cx="60" cy="280" r="9" fill="#c8e773"/><path d="m55.500 280 3 3 6-6.500" stroke="#17141a" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="80" y="285" font-size="13" font-weight="500" fill="#17141a" font-family="Segoe UI, system-ui, Arial, sans-serif" >Nómina quincenal</text><text x="354" y="285" font-size="13" font-weight="600" fill="#5d5564" font-family="Segoe UI, system-ui, Arial, sans-serif" text-anchor="end">$64,300</text>
+<rect x="38" y="306" width="330" height="40" rx="12" fill="#fff"/>
+<circle cx="60" cy="326" r="9" fill="#f6c66b"/><path d="M60 321v6" stroke="#17141a" stroke-width="2.200" stroke-linecap="round"/><circle cx="60" cy="331" r="1.300" fill="#17141a"/>
+<text x="80" y="331" font-size="13" font-weight="500" fill="#17141a" font-family="Segoe UI, system-ui, Arial, sans-serif" >Servicio de internet</text><text x="354" y="331" font-size="13" font-weight="600" fill="#17141a" font-family="Segoe UI, system-ui, Arial, sans-serif" text-anchor="end">$1,190</text>
+<text x="40" y="366" font-size="11" font-weight="500" fill="#8b8392" font-family="Segoe UI, system-ui, Arial, sans-serif" >Datos ilustrativos</text>
+<rect x="410" y="60" width="206" height="150" rx="20" fill="#17141a"/>
+<circle cx="434" cy="86" r="11" fill="#c8e773"/><path d="M429 86h10M434 81v10" stroke="#17141a" stroke-width="2" stroke-linecap="round"/>
+<text x="452" y="91" font-size="12" font-weight="600" fill="#fff" font-family="Segoe UI, system-ui, Arial, sans-serif" >Agente contable</text>
+<text x="426" y="122" font-size="13.5" font-weight="500" fill="#f5f1f7" font-family="Segoe UI, system-ui, Arial, sans-serif" >Encontré 2 movimientos</text><text x="426" y="141" font-size="13.5" font-weight="500" fill="#f5f1f7" font-family="Segoe UI, system-ui, Arial, sans-serif" >sin factura. ¿Los mando</text><text x="426" y="160" font-size="13.5" font-weight="500" fill="#f5f1f7" font-family="Segoe UI, system-ui, Arial, sans-serif" >a revisión?</text>
+<rect x="426" y="174" width="84" height="26" rx="13" fill="#c8e773"/><text x="442" y="192" font-size="12" font-weight="700" fill="#17141a" font-family="Segoe UI, system-ui, Arial, sans-serif" >Aprobar</text><rect x="518" y="174" width="82" height="26" rx="13" fill="#fff" fill-opacity=".14"/><text x="534" y="192" font-size="12" font-weight="600" fill="#fff" font-family="Segoe UI, system-ui, Arial, sans-serif" >Revisar</text>
+<rect x="410" y="230" width="206" height="62" rx="18" fill="#fff" fill-opacity="0.9" stroke="#fff" stroke-opacity=".9"/><text x="426" y="256" font-size="11" font-weight="700" fill="#663a80" font-family="Segoe UI, system-ui, Arial, sans-serif" letter-spacing="1.2">CIERRE DEL MES</text><text x="426" y="278" font-size="15" font-weight="600" fill="#17141a" font-family="Segoe UI, system-ui, Arial, sans-serif" >Listo en 2 días, no en 6</text>
+<rect x="410" y="306" width="206" height="44" rx="22" fill="#fff" fill-opacity="0.9" stroke="#fff" stroke-opacity=".9"/><circle cx="432" cy="328" r="10" fill="#f2a9c4"/><text x="450" y="333" font-size="13" font-weight="500" fill="#17141a" font-family="Segoe UI, system-ui, Arial, sans-serif" >Contadora revisa y firma</text>
+<rect width="640" height="400" filter="url(#n)" opacity="0.14" style="mix-blend-mode:soft-light"/></svg>

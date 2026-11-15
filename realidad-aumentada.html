@@ -4,16 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Realidad aumentada · Natem</title>
-<meta name="description" content="Experiencias de realidad aumentada en el navegador: guías en interiores, menús en 3D, productos y lugares en AR.">
+<meta name="description" content="Experiencias de realidad aumentada en el navegador: productos en tu espacio, menús en 3D, etiquetas y lugares en AR.">
 <meta property="og:title" content="Realidad aumentada · Natem">
-<meta property="og:description" content="Experiencias de realidad aumentada en el navegador: guías en interiores, menús en 3D, productos y lugares en AR.">
+<meta property="og:description" content="Experiencias de realidad aumentada en el navegador: productos en tu espacio, menús en 3D, etiquetas y lugares en AR.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#f4f0f6">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='24' cy='32' r='20' fill='%23c8e773'/%3E%3Ctext x='20' y='47' font-family='Arial' font-style='italic' font-weight='900' font-size='44' fill='%2317141a'%3EN%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,800&family=Instrument+Serif:ital@1&family=Outfit:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/site.css?v=2">
+<link rel="stylesheet" href="assets/v2.css?v=2">
 </head>
 <body>
 <div class="backdrop" aria-hidden="true"><i></i><i></i><i></i></div>
@@ -38,28 +39,30 @@
 <main>
 <section class="subhero">
   <div class="wrap">
-    <div class="stage rose rv" data-orb data-palette="rose" data-offset="1.15,0.25">
+    <div class="stage rose has-ring rv" data-orb data-palette="rose" data-offset="1.6,0.9">
       <canvas aria-hidden="true"></canvas>
       <span class="pill tag">WebAR · sin instalar apps</span>
+      <div class="ring" aria-hidden="true" style="--n:5"><div class="ring-spin"><figure style="--i:0"><img src="img/scene-sofa.svg" alt="" loading="lazy" decoding="async"></figure><figure style="--i:1"><img src="img/menu-ar.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--i:2"><img src="img/scene-etiqueta.svg" alt="" loading="lazy" decoding="async"></figure><figure style="--i:3"><img src="img/terrain.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--i:4"><img src="img/menu.webp" alt="" loading="lazy" decoding="async"></figure></div></div>
       <div class="panel glass">
         <span class="eyebrow">Natem · Realidad aumentada</span>
         <h1>Realidad aumentada que se abre desde <em>un enlace</em>.</h1>
-        <p class="lead">Experiencias WebAR: la persona escanea un código o abre un enlace y ve el contenido sobre su entorno, desde la cámara del móvil.</p>
+        <p class="lead">Experiencias WebAR: la persona escanea un código o abre un enlace y <b>ve el contenido sobre su entorno</b>, desde la cámara del móvil.</p>
         <div class="cta-row"><a class="btn " href="#contacto">Cuéntanos tu idea<i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a><a class="btn ghost" href="#proyectos">Ver proyectos</a></div>
       </div>
     </div>
   </div>
 </section>
-<section>
+
+<section id="servicios">
   <div class="wrap">
     <div class="head rv"><span class="eyebrow">Qué podemos construir</span><h2>AR con un propósito <em>claro</em>.</h2></div>
     <div class="services">
-      <article class="service card rv" style="--d:0s"><span class="ico lg ink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.200 7-11a7 7 0 1 0-14 0c0 4.800 7 11 7 11Z"/><circle cx="12" cy="10" r="2.500"/></svg></span><h3>Guías en interiores</h3><p>Rutas dibujadas sobre el suelo para orientarse en hospitales, plazas o campus.</p></article>
-      <article class="service glass rv" style="--d:0.08s"><span class="ico lg ink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9 5.500 4h13L20 9M4 9v11h16V9M4 9a2.700 2.700 0 0 0 5.300 0a2.700 2.700 0 0 0 5.400 0A2.700 2.700 0 0 0 20 9M9 20v-6h6v6"/></svg></span><h3>Menús y productos en 3D</h3><p>Cada platillo o producto visto en la mesa del cliente antes de pedirlo.</p></article>
-      <article class="service card rv" style="--d:0.16s"><span class="ico lg ink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18Z"/></svg></span><h3>Turismo y museos</h3><p>Terrenos, maquetas y piezas en AR con información y panoramas 360°.</p></article>
-      <article class="service card rv" style="--d:0s"><span class="ico lg ink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8V6a2 2 0 0 1 2-2h2m8 0h2a2 2 0 0 1 2 2v2m0 8v2a2 2 0 0 1-2 2h-2m-8 0H6a2 2 0 0 1-2-2v-2M8 12h8"/></svg></span><h3>AR sobre etiquetas y empaques</h3><p>Una imagen impresa que activa contenido cuando la enfocas con la cámara.</p></article>
-      <article class="service glass rv" style="--d:0.08s"><span class="ico lg ink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Zm0 9 8-4.5M12 12v9m0-9L4 7.500"/></svg></span><h3>Modelos 3D para AR</h3><p>Preparamos y optimizamos los modelos para que carguen rápido en el móvil.</p></article>
-      <article class="service card rv" style="--d:0.16s"><span class="ico lg ink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9.500 9 5 9-5M3 17l9 5 9-5"/></svg></span><h3>AR junto a tu web o tu tour</h3><p>La experiencia se integra con tu sitio, tu catálogo o tu tour virtual.</p></article>
+      <article class="service card rv" style="--d:0s"><div class="art"><img src="img/art-model.svg" alt="" loading="lazy" decoding="async"><span class="ico ink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Zm0 9 8-4.5M12 12v9m0-9L4 7.500"/></svg></span></div><h3>Productos en tu espacio</h3><p>Un mueble, un equipo o una pieza a escala real en el lugar del cliente antes de comprar.</p></article>
+      <article class="service glass rv" style="--d:0.08s"><div class="art"><img src="img/art-dish.svg" alt="" loading="lazy" decoding="async"><span class="ico lime"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9 5.500 4h13L20 9M4 9v11h16V9M4 9a2.700 2.700 0 0 0 5.300 0a2.700 2.700 0 0 0 5.400 0A2.700 2.700 0 0 0 20 9M9 20v-6h6v6"/></svg></span></div><h3>Menús y productos en 3D</h3><p>Cada platillo o producto visto en la mesa del cliente antes de pedirlo.</p></article>
+      <article class="service card rv" style="--d:0.16s"><div class="art"><img src="img/art-terrain.svg" alt="" loading="lazy" decoding="async"><span class="ico pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18Z"/></svg></span></div><h3>Turismo y museos</h3><p>Terrenos, maquetas y piezas en AR con información y panoramas 360°.</p></article>
+      <article class="service card rv" style="--d:0s"><div class="art"><img src="img/art-label.svg" alt="" loading="lazy" decoding="async"><span class="ico violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8V6a2 2 0 0 1 2-2h2m8 0h2a2 2 0 0 1 2 2v2m0 8v2a2 2 0 0 1-2 2h-2m-8 0H6a2 2 0 0 1-2-2v-2M8 12h8"/></svg></span></div><h3>AR sobre etiquetas y empaques</h3><p>Una imagen impresa que activa contenido cuando la enfocas con la cámara.</p></article>
+      <article class="service glass rv" style="--d:0.08s"><div class="art"><img src="img/art-route.svg" alt="" loading="lazy" decoding="async"><span class="ico ink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.200 7-11a7 7 0 1 0-14 0c0 4.800 7 11 7 11Z"/><circle cx="12" cy="10" r="2.500"/></svg></span></div><h3>Guías en interiores</h3><p>Rutas dibujadas sobre el suelo para orientarse en plazas, campus o recintos.</p></article>
+      <article class="service card rv" style="--d:0.16s"><div class="art"><img src="img/art-webar.svg" alt="" loading="lazy" decoding="async"><span class="ico lime"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9.500 9 5 9-5M3 17l9 5 9-5"/></svg></span></div><h3>AR junto a tu web o tu tour</h3><p>La experiencia se integra con tu sitio, tu catálogo o tu tour virtual.</p></article>
     </div>
   </div>
 </section>
@@ -67,19 +70,19 @@
   <div class="wrap">
     <div class="head split rv">
       <div class="head" style="margin:0"><span class="eyebrow">Proyectos</span><h2>Proyectos en <em>AR</em>.</h2></div>
-      <p class="lead">Demos publicadas y un prototipo. Las demos se prueban desde un móvil con cámara.</p>
+      <p class="lead">Dos demos publicadas, que se prueban desde un móvil con cámara, y un concepto.</p>
     </div>
     <div class="projects">
       <article class="proj card rv" style="--d:0s">
-        <div class="shot"><img src="img/hospital.webp" alt="Flechas de realidad aumentada sobre el pasillo de un hospital" loading="lazy" decoding="async"></div>
+        <div class="shot "><img src="img/scene-etiqueta.svg" alt="Ilustración: la etiqueta de una botella muestra información en realidad aumentada" loading="lazy" decoding="async"></div>
         <div class="meta">
-          <div class="top"><h3>Guía AR en hospital</h3><span class="pill">Prototipo</span></div>
-          <p>Orientación en interiores: el móvil dibuja la ruta sobre el suelo hasta el área que buscas.</p>
+          <div class="top"><h3>AR sobre etiquetas</h3><span class="pill">Concepto</span></div>
+          <p>Enfocas la etiqueta de una botella y aparecen su origen, sus notas de cata y un video del productor.</p>
           
         </div>
       </article>
       <article class="proj card rv" style="--d:0.08s">
-        <div class="shot"><img src="img/terrain.webp" alt="Terreno 3D de las Dolomitas visto en realidad aumentada" loading="lazy" decoding="async"></div>
+        <div class="shot "><img src="img/terrain.webp" alt="Terreno 3D de las Dolomitas visto en realidad aumentada" loading="lazy" decoding="async"></div>
         <div class="meta">
           <div class="top"><h3>Terrain AR</h3><span class="pill">Demo WebAR</span></div>
           <p>El relieve de las Dolomitas sobre tu mesa, con pines que abren panoramas 360°.</p>
@@ -87,7 +90,7 @@
         </div>
       </article>
       <article class="proj card rv" style="--d:0.16s">
-        <div class="shot"><img src="img/menu.webp" alt="Carta digital con platillos en 3D" loading="lazy" decoding="async"></div>
+        <div class="shot "><img src="img/menu.webp" alt="Carta digital con platillos en 3D" loading="lazy" decoding="async"></div>
         <div class="meta">
           <div class="top"><h3>Menú en AR</h3><span class="pill">Demo</span></div>
           <p>La carta de un restaurante con cada platillo en 3D y en realidad aumentada.</p>
@@ -97,16 +100,15 @@
     </div>
   </div>
 </section>
-
 <section id="proceso">
   <div class="wrap">
     <div class="head split rv">
       <div class="head" style="margin:0"><span class="eyebrow">Cómo trabajamos</span><h2>También aquí, primero tu <em>proceso</em>.</h2></div>
-      <p class="lead">No empezamos por la tecnología: empezamos por cómo trabaja tu negocio hoy. Después decidimos qué conviene automatizar y con qué.</p>
+      <p class="lead">No empezamos por la tecnología: empezamos por <b>cómo trabaja tu negocio hoy</b>. Después decidimos qué conviene automatizar y con qué.</p>
     </div>
     <div class="process">
-      <article class="step card rv"><span class="n">01</span><div><h3>Revisamos tus procesos</h3><p>Vemos cómo entra un cliente, qué se repite cada día y dónde se pierde tiempo o se escapan oportunidades.</p></div></article>
-      <article class="step glass rv" style="--d:.08s"><span class="n">02</span><div><h3>Los automatizamos con IA o software a medida</h3><p>Diseñamos la solución alrededor de tu operación y la conectamos con las herramientas que ya usas.</p></div></article>
+      <article class="step card rv"><span class="bgimg" style="background-image:url(img/suma-resumen.webp)" aria-hidden="true"></span><span class="n">01</span><div><h3>Revisamos tus procesos</h3><p>Vemos cómo entra un cliente, qué se repite cada día y dónde se pierde tiempo o se escapan oportunidades.</p></div></article>
+      <article class="step glass rv" style="--d:.08s"><span class="bgimg" style="background-image:url(img/crm.webp)" aria-hidden="true"></span><span class="n">02</span><div><h3>Los automatizamos con IA o software a medida</h3><p>Diseñamos la solución alrededor de tu operación y la conectamos con las herramientas que ya usas.</p></div></article>
       <article class="step dark rv" style="--d:.16s"><span class="n">03</span><div><h3>Ahorras tiempo y dinero, o ganas clientes</h3><p>Medimos el cambio en tu operación, no en la tecnología. Si algo no aporta, no se construye.</p></div></article>
     </div>
     <div class="aud">
@@ -124,13 +126,14 @@
       <div class="copy">
         <span class="eyebrow" style="color:#b9b2c0">Siguiente paso</span>
         <h2>¿Qué te gustaría que tus clientes <em>vieran</em> en AR?</h2>
-        <p class="lead" style="color:#c3bcc9">Cuéntanos el lugar, el producto o el recorrido. Te decimos qué se puede lograr desde el navegador y qué necesitaría más desarrollo.</p>
+        <p class="lead">Cuéntanos el lugar, el producto o el recorrido. Te decimos <b>qué se puede lograr desde el navegador</b> y qué necesitaría más desarrollo.</p>
+        <div class="cta-row">
+          <a class="btn light" href="https://wa.me/525656956537?text=Hola%20Natem%2C%20me%20interesa%20una%20experiencia%20de%20realidad%20aumentada." target="_blank" rel="noopener">Escríbenos por WhatsApp<i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></i></a>
+          <a class="btn ghost" href="https://www.instagram.com/natem.ai/" target="_blank" rel="noopener">Instagram @natem.ai</a>
+        </div>
+        <p class="note">Te respondemos con <b>preguntas sobre tu operación</b>, no con un catálogo.</p>
       </div>
-      <div class="side">
-        <a class="btn light" href="https://wa.me/525656956537?text=Hola%20Natem%2C%20me%20interesa%20una%20experiencia%20de%20realidad%20aumentada." target="_blank" rel="noopener">Escríbenos por WhatsApp<i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></i></a>
-        <a class="btn ghost" href="https://www.instagram.com/natem.ai/" target="_blank" rel="noopener">Instagram @natem.ai</a>
-        <p class="mute" style="font-size:.86rem;margin-top:6px">Te respondemos con preguntas sobre tu operación, no con un catálogo.</p>
-      </div>
+      
     </div>
   </div>
 </section>
@@ -147,7 +150,8 @@
     <span>AI – Software Engineering · México</span>
   </div>
 </footer>
-<script type="module" src="assets/site.js"></script>
+<script type="module" src="assets/site.js?v=2"></script>
 <script type="module" src="assets/orb.js"></script>
+<script type="module" src="assets/rec.js?v=2"></script>
 </body>
 </html>

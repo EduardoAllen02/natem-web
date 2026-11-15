@@ -13,7 +13,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,800&family=Instrument+Serif:ital@1&family=Outfit:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/site.css?v=2">
+<link rel="stylesheet" href="assets/v2.css?v=2">
 </head>
 <body>
 <div class="backdrop" aria-hidden="true"><i></i><i></i><i></i></div>
@@ -41,25 +42,27 @@
     <div class="stage violet rv" data-orb data-palette="violet" data-offset="1.15,0.25">
       <canvas aria-hidden="true"></canvas>
       <span class="pill tag">CRMs · paneles · plataformas</span>
+      
       <div class="panel glass">
         <span class="eyebrow">Natem · Software a medida</span>
         <h1>Software hecho alrededor de <em>tu operación</em>.</h1>
-        <p class="lead">Cuando una hoja de cálculo ya no alcanza y un sistema genérico no encaja, construimos el tuyo: lo justo para tu proceso, conectado con lo que ya usas.</p>
+        <p class="lead">Cuando una hoja de cálculo ya no alcanza y un sistema genérico no encaja, construimos el tuyo: <b>lo justo para tu proceso</b>, conectado con lo que ya usas.</p>
         <div class="cta-row"><a class="btn " href="#contacto">Cuéntanos tu idea<i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a><a class="btn ghost" href="#proyectos">Ver proyectos</a></div>
       </div>
     </div>
   </div>
 </section>
-<section>
+
+<section id="servicios">
   <div class="wrap">
     <div class="head rv"><span class="eyebrow">Qué podemos construir</span><h2>Sistemas que tu equipo <em>sí</em> usa.</h2></div>
     <div class="services">
-      <article class="service card rv" style="--d:0s"><span class="ico lg ink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 10h18M3 15h18M10 4v16"/></svg></span><h3>CRMs y seguimiento</h3><p>Prospectos, clientes y tareas en un solo lugar, con los pasos de tu proceso de venta y no los de otro.</p></article>
-      <article class="service glass rv" style="--d:0.08s"><span class="ico lg ink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M9 9v11"/></svg></span><h3>Paneles y reportes</h3><p>La información de tus sucursales o áreas en una pantalla, por establecimiento y por responsable.</p></article>
-      <article class="service card rv" style="--d:0.16s"><span class="ico lg ink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9.500 9 5 9-5M3 17l9 5 9-5"/></svg></span><h3>Plataformas y SaaS</h3><p>Productos completos con cuentas, planes y permisos, como hicimos con SumaReseñas.</p></article>
-      <article class="service card rv" style="--d:0s"><span class="ico lg ink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/><path d="M10 6.500h4a3 3 0 0 1 3 3V14"/></svg></span><h3>Integraciones</h3><p>Conectamos punto de venta, formularios, mensajería y bases de datos para que la información no se capture dos veces.</p></article>
-      <article class="service glass rv" style="--d:0.08s"><span class="ico lg ink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Zm0 9 8-4.5M12 12v9m0-9L4 7.500"/></svg></span><h3>Editores y configuradores</h3><p>Herramientas para que tu equipo arme contenido sin depender de un especialista, como nuestro editor de tours.</p></article>
-      <article class="service card rv" style="--d:0.16s"><span class="ico lg ink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4m0 10v4M3 12h4m10 0h4M6 6l2.500 2.500m7 7L18 18M18 6l-2.500 2.500m-7 7L6 18"/></svg></span><h3>Software con IA dentro</h3><p>Agentes y asistentes integrados al sistema, con aprobación humana en las acciones que importan.</p></article>
+      <article class="service card rv" style="--d:0s"><div class="art"><img src="img/art-crm.svg" alt="" loading="lazy" decoding="async"><span class="ico ink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 10h18M3 15h18M10 4v16"/></svg></span></div><h3>CRMs y seguimiento</h3><p>Prospectos, clientes y tareas en un solo lugar, con los pasos de tu proceso de venta y no los de otro.</p></article>
+      <article class="service glass rv" style="--d:0.08s"><div class="art"><img src="img/art-panel.svg" alt="" loading="lazy" decoding="async"><span class="ico lime"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M9 9v11"/></svg></span></div><h3>Paneles y reportes</h3><p>La información de tus sucursales o áreas en una pantalla, por establecimiento y por responsable.</p></article>
+      <article class="service card rv" style="--d:0.16s"><div class="art"><img src="img/art-saas.svg" alt="" loading="lazy" decoding="async"><span class="ico pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9.500 9 5 9-5M3 17l9 5 9-5"/></svg></span></div><h3>Plataformas y SaaS</h3><p>Productos completos con cuentas, planes y permisos, como hicimos con SumaReseñas.</p></article>
+      <article class="service card rv" style="--d:0s"><div class="art"><img src="img/art-integ.svg" alt="" loading="lazy" decoding="async"><span class="ico violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/><path d="M10 6.500h4a3 3 0 0 1 3 3V14"/></svg></span></div><h3>Integraciones</h3><p>Conectamos punto de venta, formularios, mensajería y bases de datos para que la información no se capture dos veces.</p></article>
+      <article class="service glass rv" style="--d:0.08s"><div class="art"><img src="img/art-editor.svg" alt="" loading="lazy" decoding="async"><span class="ico ink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Zm0 9 8-4.5M12 12v9m0-9L4 7.500"/></svg></span></div><h3>Editores y configuradores</h3><p>Herramientas para que tu equipo arme contenido sin depender de un especialista, como nuestro configurador de tours.</p></article>
+      <article class="service card rv" style="--d:0.16s"><div class="art"><img src="img/art-ia.svg" alt="" loading="lazy" decoding="async"><span class="ico lime"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4m0 10v4M3 12h4m10 0h4M6 6l2.500 2.500m7 7L18 18M18 6l-2.500 2.500m-7 7L6 18"/></svg></span></div><h3>Software con IA dentro</h3><p>Agentes y asistentes integrados al sistema, con aprobación humana en las acciones que importan.</p></article>
     </div>
   </div>
 </section>
@@ -67,11 +70,11 @@
   <div class="wrap">
     <div class="head split rv">
       <div class="head" style="margin:0"><span class="eyebrow">Proyectos</span><h2>Sistemas que <em>ya</em> armamos.</h2></div>
-      <p class="lead">Un producto propio, una herramienta en desarrollo y un concepto de interfaz. Cada uno dice su estado.</p>
+      <p class="lead">Un producto propio, proyectos de cliente y un concepto de interfaz. Cada uno dice su estado.</p>
     </div>
     <div class="projects two">
       <article class="proj card rv" style="--d:0s">
-        <div class="shot"><img src="img/suma-resumen.webp" alt="Panel de resumen de SumaReseñas con datos de ejemplo" loading="lazy" decoding="async"></div>
+        <div class="shot "><img src="img/suma-resumen.webp" alt="Panel de resumen de SumaReseñas con datos de ejemplo" loading="lazy" decoding="async"></div>
         <div class="meta">
           <div class="top"><h3>Plataforma SumaReseñas</h3><span class="pill">Demo · datos de ejemplo</span></div>
           <p>Reseñas, encuestas y seguimiento por sucursal, con borradores de respuesta que una persona revisa y publica.</p>
@@ -79,7 +82,7 @@
         </div>
       </article>
       <article class="proj card rv" style="--d:0.08s">
-        <div class="shot"><img src="img/crm.webp" alt="Panel de un CRM agéntico con datos de demostración" loading="lazy" decoding="async"></div>
+        <div class="shot "><img src="img/crm.webp" alt="Panel de un CRM agéntico con datos de demostración" loading="lazy" decoding="async"></div>
         <div class="meta">
           <div class="top"><h3>CRM agéntico</h3><span class="pill">Concepto · datos demo</span></div>
           <p>Prospección inmobiliaria: el agente califica y propone; una persona aprueba antes de cada acción clave.</p>
@@ -87,15 +90,15 @@
         </div>
       </article>
       <article class="proj card rv" style="--d:0.16s">
-        <div class="shot"><img src="img/tourstudio.webp" alt="Editor web de tours 360°" loading="lazy" decoding="async"></div>
+        <div class="shot "><img src="img/tourstudio.webp" alt="Editor web de tours 360°" loading="lazy" decoding="async"></div>
         <div class="meta">
-          <div class="top"><h3>Tour Studio</h3><span class="pill">En desarrollo</span></div>
+          <div class="top"><h3>Configurador de tours virtuales</h3><span class="pill">Proyecto de cliente</span></div>
           <p>Editor web para armar un tour 360° con escenas, puntos de interés y marca, sin escribir código.</p>
           
         </div>
       </article>
       <article class="proj card rv" style="--d:0s">
-        <div class="shot"><img src="img/colombini.webp" alt="Portal 3D de entrada con accesos por marca" loading="lazy" decoding="async"></div>
+        <div class="shot "><img src="img/colombini.webp" alt="Portal 3D de entrada con accesos por marca" loading="lazy" decoding="async"></div>
         <div class="meta">
           <div class="top"><h3>Portal 3D corporativo</h3><span class="pill">Proyecto de cliente</span></div>
           <p>Portal de entrada en 3D para un grupo italiano de mobiliario, con acceso por marca. Hecho con Interiors3D.</p>
@@ -105,16 +108,15 @@
     </div>
   </div>
 </section>
-
 <section id="proceso">
   <div class="wrap">
     <div class="head split rv">
       <div class="head" style="margin:0"><span class="eyebrow">Cómo trabajamos</span><h2>También aquí, primero tu <em>proceso</em>.</h2></div>
-      <p class="lead">No empezamos por la tecnología: empezamos por cómo trabaja tu negocio hoy. Después decidimos qué conviene automatizar y con qué.</p>
+      <p class="lead">No empezamos por la tecnología: empezamos por <b>cómo trabaja tu negocio hoy</b>. Después decidimos qué conviene automatizar y con qué.</p>
     </div>
     <div class="process">
-      <article class="step card rv"><span class="n">01</span><div><h3>Revisamos tus procesos</h3><p>Vemos cómo entra un cliente, qué se repite cada día y dónde se pierde tiempo o se escapan oportunidades.</p></div></article>
-      <article class="step glass rv" style="--d:.08s"><span class="n">02</span><div><h3>Los automatizamos con IA o software a medida</h3><p>Diseñamos la solución alrededor de tu operación y la conectamos con las herramientas que ya usas.</p></div></article>
+      <article class="step card rv"><span class="bgimg" style="background-image:url(img/suma-resumen.webp)" aria-hidden="true"></span><span class="n">01</span><div><h3>Revisamos tus procesos</h3><p>Vemos cómo entra un cliente, qué se repite cada día y dónde se pierde tiempo o se escapan oportunidades.</p></div></article>
+      <article class="step glass rv" style="--d:.08s"><span class="bgimg" style="background-image:url(img/crm.webp)" aria-hidden="true"></span><span class="n">02</span><div><h3>Los automatizamos con IA o software a medida</h3><p>Diseñamos la solución alrededor de tu operación y la conectamos con las herramientas que ya usas.</p></div></article>
       <article class="step dark rv" style="--d:.16s"><span class="n">03</span><div><h3>Ahorras tiempo y dinero, o ganas clientes</h3><p>Medimos el cambio en tu operación, no en la tecnología. Si algo no aporta, no se construye.</p></div></article>
     </div>
     <div class="aud">
@@ -132,13 +134,14 @@
       <div class="copy">
         <span class="eyebrow" style="color:#b9b2c0">Siguiente paso</span>
         <h2>¿Qué proceso ya no cabe en una <em>hoja de cálculo</em>?</h2>
-        <p class="lead" style="color:#c3bcc9">Cuéntanos cómo lo llevan hoy. Te decimos si conviene un sistema a medida, una automatización o dejarlo como está.</p>
+        <p class="lead">Cuéntanos cómo lo llevan hoy. Te decimos <b>si conviene un sistema a medida, una automatización o dejarlo como está</b>.</p>
+        <div class="cta-row">
+          <a class="btn light" href="https://wa.me/525656956537?text=Hola%20Natem%2C%20quiero%20platicar%20sobre%20un%20sistema%20a%20medida%20para%20mi%20empresa." target="_blank" rel="noopener">Escríbenos por WhatsApp<i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></i></a>
+          <a class="btn ghost" href="https://www.instagram.com/natem.ai/" target="_blank" rel="noopener">Instagram @natem.ai</a>
+        </div>
+        <p class="note">Te respondemos con <b>preguntas sobre tu operación</b>, no con un catálogo.</p>
       </div>
-      <div class="side">
-        <a class="btn light" href="https://wa.me/525656956537?text=Hola%20Natem%2C%20quiero%20platicar%20sobre%20un%20sistema%20a%20medida%20para%20mi%20empresa." target="_blank" rel="noopener">Escríbenos por WhatsApp<i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></i></a>
-        <a class="btn ghost" href="https://www.instagram.com/natem.ai/" target="_blank" rel="noopener">Instagram @natem.ai</a>
-        <p class="mute" style="font-size:.86rem;margin-top:6px">Te respondemos con preguntas sobre tu operación, no con un catálogo.</p>
-      </div>
+      
     </div>
   </div>
 </section>
@@ -155,7 +158,8 @@
     <span>AI – Software Engineering · México</span>
   </div>
 </footer>
-<script type="module" src="assets/site.js"></script>
+<script type="module" src="assets/site.js?v=2"></script>
 <script type="module" src="assets/orb.js"></script>
+<script type="module" src="assets/rec.js?v=2"></script>
 </body>
 </html>
