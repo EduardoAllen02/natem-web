@@ -10,7 +10,7 @@ const NATEM = path.dirname(WEB);
 const CAP = path.join(NATEM, "carruseles/capturas/portafolio");
 const PORT = path.join(NATEM, "portafolio");
 
-const NATALIA_URL = "https://web-eta-nine-99.vercel.app";
+const NATALIA_URL = "https://natalia-web-537.pages.dev";
 const SUMA_URL = "https://sumaresenas.com/";
 const IG_URL = "https://www.instagram.com/natem.ai/";
 const wa = (text) => `https://wa.me/525656956537?text=${encodeURIComponent(text)}`;
