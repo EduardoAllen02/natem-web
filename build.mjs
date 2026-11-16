@@ -81,7 +81,6 @@ const rec = (cls = "") => `<div class="rec ${cls}" data-rec>
             <div class="rec-wave" aria-hidden="true">${"<i></i>".repeat(44)}</div>
             <p data-rec-text>Pulsa y escucha cómo contesta Natalia.</p>
           </div>
-          <small class="rec-note">Voz generada con IA · negocios de ejemplo</small>
         </div>`;
 // Carrusel 3D de imágenes que giran despacio.
 const ring = (names) => `<div class="ring" aria-hidden="true" style="--n:${names.length}"><div class="ring-spin">${names.map((n, i) => `<figure style="--i:${i}"><img src="${src(n)}" alt="" loading="lazy" decoding="async"></figure>`).join("")}</div></div>`;
@@ -113,8 +112,8 @@ const PROJECTS = {
   interiors: { img: "interiors", alt: "Sitio web de Interiors3D", name: "Interiors3D", state: "Sitio en línea", text: "Rediseño web para un estudio italiano de experiencias digitales inmersivas.", url: "https://www.interiors3d.com" },
   tourstudio: { img: "tourstudio", alt: "Editor web de tours 360°", name: "Configurador de tours virtuales", state: "Proyecto de cliente", text: "Editor web para armar un tour 360° con escenas, puntos de interés y marca, sin escribir código." },
   moodboard: { img: "moodboard", alt: "Moodboard generado a partir de la foto de un espacio", name: "Moodboard con IA", state: "Proyecto de cliente", text: "De la foto de un espacio a un moodboard con estilo, paleta, materiales y texturas." },
-  museo: { img: "museo", alt: "Modelo 3D interactivo de un museo", name: "Modelo 3D de un museo", state: "Proyecto de cliente", text: "Modelo 3D interactivo de un museo con puntos que abren la información de cada sala.", url: "https://eduardoallen02.github.io/MuseumVisualizer/" },
-  symbiont: { img: "symbiont", alt: "Configurador 3D con material metálico", name: "Configurador 3D", state: "Prototipo", text: "Material y entorno que cambian en tiempo real sobre una figura 3D, directo en el navegador.", url: "https://eduardoallen02.github.io/Symbiont-Configurator-ThreeJS/" },
+  museo: { img: "museo", alt: "Modelo 3D interactivo de un museo", name: "Modelo 3D de un museo", state: "Proyecto de cliente", text: "Modelo 3D interactivo de un museo con puntos que abren la información de cada sala." },
+  symbiont: { img: "symbiont", alt: "Configurador 3D con material metálico", name: "Configurador 3D", state: "Prototipo", text: "Material y entorno que cambian en tiempo real sobre una figura 3D, directo en el navegador." },
   etiqueta: { img: "foto-ar-etiqueta", pos: "center", alt: "Un móvil enfocando la etiqueta de una botella (foto de referencia)", name: "AR sobre etiquetas", state: "Concepto", text: "Enfocas la etiqueta de una botella y aparecen su origen, sus notas de cata y un video del productor. Foto de referencia." },
   terrain: { img: "terrain", alt: "Terreno 3D de las Dolomitas visto en realidad aumentada", name: "Terrain AR", state: "Demo WebAR", text: "El relieve de las Dolomitas sobre tu mesa, con pines que abren panoramas 360°.", url: "https://eduardoallen02.github.io/terrain-ar/" },
   menu: { img: "menu", alt: "Carta digital con platillos en 3D", name: "Menú en AR", state: "Demo", text: "La carta de un restaurante con cada platillo en 3D y en realidad aumentada.", url: "https://eduardoallen02.github.io/restaurant-ar-menu/" },
@@ -146,8 +145,8 @@ const head = (title, desc) => `<!doctype html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,800&family=Instrument+Serif:ital@1&family=Outfit:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=2">
-<link rel="stylesheet" href="assets/v2.css?v=2">
+<link rel="stylesheet" href="assets/site.css?v=3">
+<link rel="stylesheet" href="assets/v2.css?v=3">
 </head>
 <body>
 <div class="backdrop" aria-hidden="true"><i></i><i></i><i></i></div>
@@ -221,9 +220,9 @@ const footer = () => `
     <span>AI – Software Engineering · México</span>
   </div>
 </footer>
-<script type="module" src="assets/site.js?v=2"></script>
+<script type="module" src="assets/site.js?v=3"></script>
 <script type="module" src="assets/orb.js"></script>
-<script type="module" src="assets/rec.js?v=2"></script>
+<script type="module" src="assets/rec.js?v=3"></script>
 </body>
 </html>`;
 
@@ -277,7 +276,7 @@ ${nav("index.html")}
         <div class="tile-head"><span class="ico lg ink">${icon("chat")}</span><div><h3>Chatbots y asistentes</h3>
         <p>Responden con la información de tu catálogo o tu operación: en tu sitio, en WhatsApp o dentro de un tour virtual.</p></div></div>
         <div class="halves">
-          ${img("febal", PROJECTS.febal.alt, "wide")}
+          ${img("febal-chat", PROJECTS.febal.alt, "wide")}
           <div class="case">
             ${img("foto-contabilidad", "Una contadora trabajando con calculadora y libros", "pos-center")}
             <div>
@@ -348,12 +347,13 @@ ${processSection()}
 <section id="proyectos">
   <div class="wrap">
     <div class="head split rv">
-      <div class="head" style="margin:0"><span class="eyebrow">Proyectos</span><h2>Cosas que <em>ya</em> construimos.</h2></div>
+      <div class="head" style="margin:0"><h2>Cosas que <em>ya</em> construimos.</h2></div>
       <p class="lead">De la voz a la realidad aumentada. Cada proyecto dice en qué estado está: producto, proyecto de cliente, demo o prototipo.</p>
     </div>
     <div class="projects">
       ${["natalia", "suma", "febal", "interiors", "crm", "colombini"].map(proj).join("\n      ")}
     </div>
+    <p class="many rv"><em>…y muchos más.</em></p>
   </div>
 </section>
 <section id="por-que">
@@ -372,7 +372,7 @@ ${finalSection("¿Y si automatizamos <em>lo tuyo</em>?", "Cuéntanos qué proces
 ${footer()}`;
 
 // ---------- Subpáginas ----------
-const sub = ({ file, title, desc, palette, tag, h1, lead, services, servicesTitle, projects, projectsTitle, projectsLead, two, final, heroRing, projectsFirst, gallery }) => {
+const sub = ({ file, title, desc, palette, tag, h1, lead, services, servicesTitle, projects, projectsTitle, projectsLead, two, final, heroRing, projectsFirst, gallery, manyMore, darkHero, closing }) => {
   const servicesBlock = `
 <section id="servicios">
   <div class="wrap">
@@ -386,35 +386,65 @@ const sub = ({ file, title, desc, palette, tag, h1, lead, services, servicesTitl
 <section id="proyectos">
   <div class="wrap">
     <div class="head split rv">
-      <div class="head" style="margin:0"><span class="eyebrow">Proyectos</span><h2>${projectsTitle}</h2></div>
+      <div class="head" style="margin:0"><h2>${projectsTitle}</h2></div>
       <p class="lead">${projectsLead}</p>
     </div>
     <div class="projects${two ? " two" : ""}">
       ${projects.map(proj).join("\n      ")}
     </div>
+    ${manyMore ? '<p class="many rv"><em>…y muchos más.</em></p>' : ""}
   </div>
 </section>`;
   const proceso = processSection("También aquí, primero tu <em>proceso</em>.");
   return `${head(title, desc)}
 ${nav(file)}
 <main>
-<section class="subhero">
+${darkHero ? `<section class="subhero">
+  <div class="wrap">
+    <div class="final dark on-dark has-ring herodark rv">
+      <span class="stage planet" data-orb data-palette="pearl" data-offset="0,0" aria-hidden="true"><canvas></canvas></span>
+      <div class="copy">
+        <h1>${darkHero.h1}</h1>
+        <p class="kicker">${darkHero.kicker}</p>
+        <p class="lead">${darkHero.lead}</p>
+        <div class="cta-row">
+          ${btn("Escríbenos por WhatsApp", wa(darkHero.wa), "light", true)}
+          ${btn("Instagram @natem.ai", IG_URL, "ghost", true)}
+        </div>
+      </div>
+      ${ring(gallery)}
+    </div>
+  </div>
+</section>` : `<section class="subhero">
   <div class="wrap">
     <div class="stage ${palette}${heroRing ? " has-ring" : ""} rv" data-orb data-palette="${palette}" data-offset="${heroRing ? "1.6,0.9" : "1.15,0.25"}">
       <canvas aria-hidden="true"></canvas>
       <span class="pill tag">${tag}</span>
       ${heroRing ? ring(heroRing) : ""}
       <div class="panel glass">
-        <span class="eyebrow">Natem · ${PAGES.find((p) => p.file === file).nav}</span>
         <h1>${h1}</h1>
         <p class="lead">${lead}</p>
         <div class="cta-row">${btn("Cuéntanos tu idea", "#contacto")}${btn("Ver proyectos", "#proyectos", "ghost")}</div>
       </div>
     </div>
   </div>
-</section>
+</section>`}
 ${projectsFirst ? projectsBlock + proceso + servicesBlock : servicesBlock + projectsBlock + proceso}
-${finalSection(...final, gallery)}
+${closing ? `
+<section id="contacto">
+  <div class="wrap">
+    <div class="final light card rv">
+      <div class="copy">
+        <h2>${closing.h2}</h2>
+        <p class="lead">${closing.lead}</p>
+        <div class="cta-row">
+          ${btn("Cuéntanos tu idea", wa(closing.wa), "", true)}
+          ${btn("Ver proyectos", "#proyectos", "ghost")}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>` : finalSection(...final)}
 </main>
 ${footer()}`;
 };
@@ -434,7 +464,7 @@ const software = () => sub({
     ["spark", "Software con IA dentro", "Agentes y asistentes integrados al sistema, con aprobación humana en las acciones que importan.", "suma-respuesta"],
   ],
   projectsTitle: "Sistemas que <em>ya</em> armamos.", projectsLead: "Un producto propio, proyectos de cliente y un concepto de interfaz. Cada uno dice su estado.",
-  projects: ["sumaPanel", "crm", "tourstudio", "colombini"], two: true,
+  projects: ["sumaPanel", "crm", "tourstudio", "colombini"], two: true, manyMore: true,
   final: ["¿Qué proceso ya no cabe en una <em>hoja de cálculo</em>?", "Cuéntanos cómo lo llevan hoy. Te decimos <b>si conviene un sistema a medida, una automatización o dejarlo como está</b>.", "Hola Natem, quiero platicar sobre un sistema a medida para mi empresa."],
 });
 
@@ -453,9 +483,19 @@ const web3d = () => sub({
     ["spark", "Herramientas visuales con IA", "De una foto a un moodboard con estilo, paleta y materiales.", "moodboard"],
   ],
   projectsTitle: "Páginas y mundos que <em>ya</em> hicimos.", projectsLead: "Sitios en línea, proyectos de cliente y un prototipo. Abre los que tienen enlace y pruébalos.",
-  projects: ["interiors", "colombini", "museo", "moodboard", "tourstudio", "symbiont"], projectsFirst: true,
+  projects: ["interiors", "colombini", "museo", "moodboard", "tourstudio", "symbiont"], projectsFirst: true, manyMore: true,
   gallery: ["interiors", "suma-landing", "natalia-hero", "colombini", "museo", "moodboard", "tourstudio", "symbiont"],
-  final: ["¿Tu sitio explica bien <em>lo que haces</em>?", "Cuéntanos qué quieres mostrar: un negocio, un producto, un espacio. Te proponemos <b>el formato que mejor lo cuenta</b>.", "Hola Natem, quiero una página web o una experiencia 3D para mi negocio."],
+  darkHero: {
+    h1: "¿Tu sitio explica bien <em>lo que haces</em>?",
+    kicker: "Sitios y experiencias 3D que se <em>recuerdan</em>.",
+    lead: "Cuéntanos qué quieres mostrar: un negocio, un producto, un espacio. Te proponemos <b>el formato que mejor lo cuenta</b>.",
+    wa: "Hola Natem, quiero una página web o una experiencia 3D para mi negocio.",
+  },
+  closing: {
+    h2: "De una landing clara a <em>un mundo 3D</em>.",
+    lead: "Desde una landing page hasta un portal 3D o un tour virtual. <b>Todo se abre en el navegador</b>, en computadora y en móvil.",
+    wa: "Hola Natem, quiero contarles mi idea para una página web o una experiencia 3D.",
+  },
 });
 
 const ar = () => sub({
@@ -482,7 +522,7 @@ ${nav("")}
 <main>
 <section class="credits">
   <div class="wrap">
-    <div class="head rv"><span class="eyebrow">Créditos de imágenes</span><h1>De dónde vienen <em>las imágenes</em>.</h1>
+    <div class="head rv"><h1>De dónde vienen <em>las imágenes</em>.</h1>
       <p class="lead">Las capturas de este sitio son de productos y proyectos en los que trabajó Natem. <b>Las fotos de esta lista no son proyectos nuestros</b>: son imágenes de referencia tomadas de la web, de Pexels, bajo su licencia de uso libre. Ilustran el tipo de solución; no muestran un trabajo hecho por Natem.</p></div>
     <div class="credit-list">
       ${CREDITS.map(([n, d, a, u]) => `<a class="credit card rv" href="${u}" target="_blank" rel="noopener">${img(n, d, "pos-center")}<div><h3>${d}</h3><p>Foto de ${a} · Pexels ↗</p></div></a>`).join("\n      ")}
@@ -496,6 +536,19 @@ ${footer()}`;
 // ---------- Escritura ----------
 await mkdir(path.join(WEB, "img"), { recursive: true });
 await mkdir(path.join(WEB, "vendor"), { recursive: true });
+// Recorte del tour con asistente: sala a la izquierda, encabezado y respuesta del chat a la derecha.
+{
+  const febal = `${CAP}/03-febal-tour-chat-abierto.png`;
+  const part = (left, top, width, height, w, h) => sharp(febal).extract({ left, top, width, height }).resize(w, h, { fit: "fill" }).toBuffer();
+  await sharp({ create: { width: 1200, height: 360, channels: 3, background: "#faf8f3" } })
+    .composite([
+      { input: await part(330, 440, 710, 320, 800, 360), left: 0, top: 0 },
+      { input: await part(1040, 0, 400, 150, 400, 150), left: 800, top: 0 },
+      { input: await part(1040, 788, 400, 112, 400, 112), left: 800, top: 248 },
+    ])
+    .webp({ quality: 84 })
+    .toFile(path.join(WEB, "img", "febal-chat.webp"));
+}
 for (const [name, file] of Object.entries(IMAGES)) {
   await sharp(file).resize({ width: 1280, withoutEnlargement: true }).webp({ quality: 80 }).toFile(path.join(WEB, "img", `${name}.webp`));
 }

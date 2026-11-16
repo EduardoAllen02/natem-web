@@ -206,3 +206,31 @@ h4 { font-family: var(--display); font-weight: 500; font-size: 1.25rem; letter-s
 @media (max-width: 680px) { .credit-list { grid-template-columns: 1fr; } .services > .service:last-child:nth-child(odd) { grid-template-columns: 1fr; } }
 .service .art img { position: absolute; inset: 0; }
 @media (max-width: 680px) { .service .art img { position: static; } }
+
+/* v3: hero oscuro con planeta y carrusel, cierre claro, leyenda */
+.shot.wide { aspect-ratio: 1200 / 360; }
+.shot.wide img { object-position: center; }
+.many { text-align: center; margin-top: clamp(22px, 4vh, 40px); font-size: clamp(2rem, min(4vw, 7vh), 3.4rem); line-height: 1.1; }
+.many em { font-size: 1em; }
+.stage.planet { position: absolute; z-index: 0; right: -70px; bottom: -110px; width: 560px; height: 560px; min-height: 0; background: none; box-shadow: none; overflow: visible; border-radius: 0; opacity: 0.92; pointer-events: none; }
+.stage.planet::after { content: none; }
+.herodark { min-height: min(600px, calc(100svh - 116px)); align-items: center; padding: clamp(28px, 5vh, 56px) 52px; }
+.herodark h1 { font-size: clamp(2.4rem, min(4.9vw, 8.8vh), 4.5rem); }
+.herodark .copy { gap: clamp(14px, 2.6vh, 24px); }
+.herodark .kicker { font-family: var(--display); font-size: clamp(1.35rem, 2.1vw, 1.9rem); letter-spacing: -0.02em; line-height: 1.15; color: #f5f1f7; }
+.herodark .ring { height: 380px; }
+.final.light { color: var(--ink); grid-template-columns: 1fr; }
+.final.light .lead { color: var(--ink-2); }
+.final.light .lead b { color: var(--ink); }
+.final.light .copy { max-width: 820px; }
+@media (max-width: 1020px) {
+  .stage.planet { width: 420px; height: 420px; right: -90px; bottom: -90px; opacity: 0.75; }
+  .herodark { padding: 34px 26px; }
+  .herodark .ring { height: 250px; }
+}
+@media (max-width: 680px) {
+  .herodark { padding: 30px 20px; min-height: 0; }
+  .stage.planet { width: 340px; height: 340px; right: -110px; bottom: -70px; }
+}
+#ia { padding-top: 30px; }
+#ia .head { margin-bottom: 12px; }
