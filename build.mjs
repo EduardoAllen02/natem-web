@@ -4,7 +4,6 @@ import { mkdir, writeFile, copyFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 import sharp from "sharp";
-import { SCENES, ART } from "./art.mjs";
 
 const WEB = path.dirname(fileURLToPath(import.meta.url));
 const NATEM = path.dirname(WEB);
@@ -32,6 +31,16 @@ const IMAGES = {
   moodboard: `${CAP}/11-moodboard-ia-composicion.png`,
   museo: `${CAP}/12-museo-3d.png`,
   symbiont: `${PORT}/symbiont-configurador-3d/capturas/01-configurador-skybox.png`,
+  "crm-grafo": `${CAP}/05-crm-agentico-grafo.png`,
+  "suma-respuesta": `${CAP}/02-sumaresenas-respuesta-sugerida.png`,
+  "febal-hotspot": `${CAP}/03-febal-hotspot-producto.png`,
+  // Fotos de terceros (Pexels). Fuente y autor de cada una en CREDITS.
+  "foto-ar-sofa": `${WEB}/fotos/ar-sofa.jpg`,
+  "foto-ar-app": `${WEB}/fotos/ar-app.jpg`,
+  "foto-ar-etiqueta": `${WEB}/fotos/ar-etiqueta.jpg`,
+  "foto-qr-empaque": `${WEB}/fotos/qr-empaque.jpg`,
+  "foto-contabilidad": `${WEB}/fotos/contabilidad.jpg`,
+  "foto-punto-de-venta": `${WEB}/fotos/punto-de-venta.jpg`,
 };
 
 const I = {
@@ -59,7 +68,7 @@ const I = {
 const icon = (n) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${I[n]}</svg>`;
 const btn = (label, href, cls = "", ext = false) =>
   `<a class="btn ${cls}" href="${href}"${ext ? ' target="_blank" rel="noopener"' : ""}>${label}${cls.includes("ghost") ? "" : `<i>${icon(ext ? "up" : "arrow")}</i>`}</a>`;
-const src = (name) => `img/${name}.${/^(scene|art)-/.test(name) ? "svg" : "webp"}`;
+const src = (name) => `img/${name}.webp`;
 const img = (name, alt, cls = "") => `<div class="shot ${cls}"><img src="${src(name)}" alt="${alt}" loading="lazy" decoding="async"></div>`;
 const more = (label, href, ext = true) => `<a class="more" href="${href}"${ext ? ' target="_blank" rel="noopener"' : ""}>${label}${icon(ext ? "up" : "arrow")}</a>`;
 const moreSpan = (label) => `<span class="more">${label}${icon("arrow")}</span>`;
@@ -76,6 +85,16 @@ const rec = (cls = "") => `<div class="rec ${cls}" data-rec>
         </div>`;
 // Carrusel 3D de imágenes que giran despacio.
 const ring = (names) => `<div class="ring" aria-hidden="true" style="--n:${names.length}"><div class="ring-spin">${names.map((n, i) => `<figure style="--i:${i}"><img src="${src(n)}" alt="" loading="lazy" decoding="async"></figure>`).join("")}</div></div>`;
+
+// Imágenes que no son proyectos de Natem: fotos de referencia tomadas de la web.
+const CREDITS = [
+  ["foto-ar-sofa", "Un sofá visto en realidad aumentada desde un móvil", "Tima Miroshnichenko", "https://www.pexels.com/photo/person-holding-black-iphone-6474473/"],
+  ["foto-ar-app", "Una aplicación de realidad aumentada en un móvil", "Lorilee E", "https://www.pexels.com/photo/person-holding-black-smartphone-1309725/"],
+  ["foto-ar-etiqueta", "Un móvil enfocando una botella", "Amanoel E G", "https://www.pexels.com/photo/a-person-taking-photos-of-a-liquor-bottle-and-glass-5800918/"],
+  ["foto-qr-empaque", "Una persona escanea el código QR de un empaque", "Kampus Production", "https://www.pexels.com/photo/person-taking-photo-of-the-qr-code-7289717/"],
+  ["foto-contabilidad", "Una contadora trabajando con calculadora y libros", "Mikhail Nilov", "https://www.pexels.com/photo/a-woman-writing-on-a-book-while-holding-a-calculator-8297034/"],
+  ["foto-punto-de-venta", "Pago en el punto de venta de una cafetería", "Tillhub", "https://www.pexels.com/photo/customer-paying-at-the-checkout-6925809/"],
+];
 
 const PAGES = [
   { file: "index.html", nav: "IA y agentes" },
@@ -96,7 +115,7 @@ const PROJECTS = {
   moodboard: { img: "moodboard", alt: "Moodboard generado a partir de la foto de un espacio", name: "Moodboard con IA", state: "Proyecto de cliente", text: "De la foto de un espacio a un moodboard con estilo, paleta, materiales y texturas." },
   museo: { img: "museo", alt: "Modelo 3D interactivo de un museo", name: "Modelo 3D de un museo", state: "Proyecto de cliente", text: "Modelo 3D interactivo de un museo con puntos que abren la información de cada sala.", url: "https://eduardoallen02.github.io/MuseumVisualizer/" },
   symbiont: { img: "symbiont", alt: "Configurador 3D con material metálico", name: "Configurador 3D", state: "Prototipo", text: "Material y entorno que cambian en tiempo real sobre una figura 3D, directo en el navegador.", url: "https://eduardoallen02.github.io/Symbiont-Configurator-ThreeJS/" },
-  etiqueta: { img: "scene-etiqueta", alt: "Ilustración: la etiqueta de una botella muestra información en realidad aumentada", name: "AR sobre etiquetas", state: "Concepto", text: "Enfocas la etiqueta de una botella y aparecen su origen, sus notas de cata y un video del productor." },
+  etiqueta: { img: "foto-ar-etiqueta", pos: "center", alt: "Un móvil enfocando la etiqueta de una botella (foto de referencia)", name: "AR sobre etiquetas", state: "Concepto", text: "Enfocas la etiqueta de una botella y aparecen su origen, sus notas de cata y un video del productor. Foto de referencia." },
   terrain: { img: "terrain", alt: "Terreno 3D de las Dolomitas visto en realidad aumentada", name: "Terrain AR", state: "Demo WebAR", text: "El relieve de las Dolomitas sobre tu mesa, con pines que abren panoramas 360°.", url: "https://eduardoallen02.github.io/terrain-ar/" },
   menu: { img: "menu", alt: "Carta digital con platillos en 3D", name: "Menú en AR", state: "Demo", text: "La carta de un restaurante con cada platillo en 3D y en realidad aumentada.", url: "https://eduardoallen02.github.io/restaurant-ar-menu/" },
 };
@@ -197,6 +216,7 @@ const footer = () => `
       ${PAGES.map((p) => `<a href="${p.file}">${p.nav}</a>`).join("")}
       <a href="${NATALIA_URL}" target="_blank" rel="noopener">Natalia ↗</a>
       <a href="${SUMA_URL}" target="_blank" rel="noopener">SumaReseñas ↗</a>
+      <a href="creditos.html">Créditos de imágenes</a>
     </nav>
     <span>AI – Software Engineering · México</span>
   </div>
@@ -259,7 +279,7 @@ ${nav("index.html")}
         <div class="halves">
           ${img("febal", PROJECTS.febal.alt, "wide")}
           <div class="case">
-            ${img("scene-contabilidad", "Ilustración de un agente que concilia facturas para un despacho contable")}
+            ${img("foto-contabilidad", "Una contadora trabajando con calculadora y libros", "pos-center")}
             <div>
               <h4>Agente para contabilidad</h4>
               <p>Creamos un agente para un despacho contable.</p>
@@ -321,7 +341,7 @@ ${processSection()}
     <div class="areas">
       <a class="area card rv" href="software.html">${img("crm", PROJECTS.crm.alt)}<div><h3>Software a medida</h3><p>CRMs, paneles, plataformas y herramientas internas hechas alrededor de tu proceso.</p>${moreSpan("Ver software")}</div></a>
       <a class="area card rv" style="--d:.08s" href="web-3d.html">${img("colombini", PROJECTS.colombini.alt)}<div><h3>Web y experiencias 3D</h3><p>Sitios, landing pages, portales 3D y tours virtuales que se abren en el navegador.</p>${moreSpan("Ver web y 3D")}</div></a>
-      <a class="area card rv" style="--d:.16s" href="realidad-aumentada.html">${img("scene-sofa", "Ilustración: un sofá colocado en una sala con realidad aumentada")}<div><h3>Realidad aumentada</h3><p>Productos en tu espacio, menús en 3D y etiquetas que cobran vida, sin instalar una aplicación.</p>${moreSpan("Ver realidad aumentada")}</div></a>
+      <a class="area card rv" style="--d:.16s" href="realidad-aumentada.html">${img("foto-ar-sofa", "Un sofá visto en realidad aumentada desde un móvil", "pos-center")}<div><h3>Realidad aumentada</h3><p>Productos en tu espacio, menús en 3D y etiquetas que cobran vida, sin instalar una aplicación.</p>${moreSpan("Ver realidad aumentada")}</div></a>
     </div>
   </div>
 </section>
@@ -358,7 +378,7 @@ const sub = ({ file, title, desc, palette, tag, h1, lead, services, servicesTitl
   <div class="wrap">
     <div class="head rv"><span class="eyebrow">Qué podemos construir</span><h2>${servicesTitle}</h2></div>
     <div class="services">
-      ${services.map(([ic, t, p, a], i) => `<article class="service ${i % 3 === 1 ? "glass" : "card"} rv" style="--d:${(i % 3) * 0.08}s"><div class="art"><img src="img/art-${a}.svg" alt="" loading="lazy" decoding="async"><span class="ico ${["ink", "lime", "pink", "violet"][i % 4]}">${icon(ic)}</span></div><h3>${t}</h3><p>${p}</p></article>`).join("\n      ")}
+      ${services.map(([ic, t, p, a], i) => `<article class="service ${i % 3 === 1 ? "glass" : "card"} rv" style="--d:${(i % 3) * 0.08}s"><div class="art"><img src="${src(a)}" alt="" loading="lazy" decoding="async"><span class="ico ${["ink", "lime", "pink", "violet"][i % 4]}">${icon(ic)}</span></div><h3>${t}</h3><p>${p}</p></article>`).join("\n      ")}
     </div>
   </div>
 </section>`;
@@ -406,12 +426,12 @@ const software = () => sub({
   lead: "Cuando una hoja de cálculo ya no alcanza y un sistema genérico no encaja, construimos el tuyo: <b>lo justo para tu proceso</b>, conectado con lo que ya usas.",
   servicesTitle: "Sistemas que tu equipo <em>sí</em> usa.",
   services: [
-    ["table", "CRMs y seguimiento", "Prospectos, clientes y tareas en un solo lugar, con los pasos de tu proceso de venta y no los de otro.", "crm"],
-    ["layout", "Paneles y reportes", "La información de tus sucursales o áreas en una pantalla, por establecimiento y por responsable.", "panel"],
-    ["layers", "Plataformas y SaaS", "Productos completos con cuentas, planes y permisos, como hicimos con SumaReseñas.", "saas"],
-    ["flow", "Integraciones", "Conectamos punto de venta, formularios, mensajería y bases de datos para que la información no se capture dos veces.", "integ"],
-    ["cube", "Editores y configuradores", "Herramientas para que tu equipo arme contenido sin depender de un especialista, como nuestro configurador de tours.", "editor"],
-    ["spark", "Software con IA dentro", "Agentes y asistentes integrados al sistema, con aprobación humana en las acciones que importan.", "ia"],
+    ["table", "CRMs y seguimiento", "Prospectos, clientes y tareas en un solo lugar, con los pasos de tu proceso de venta y no los de otro.", "crm-grafo"],
+    ["layout", "Paneles y reportes", "La información de tus sucursales o áreas en una pantalla, por establecimiento y por responsable.", "suma-resumen"],
+    ["layers", "Plataformas y SaaS", "Productos completos con cuentas, planes y permisos, como hicimos con SumaReseñas.", "suma-landing"],
+    ["flow", "Integraciones", "Conectamos punto de venta, formularios, mensajería y bases de datos para que la información no se capture dos veces.", "foto-punto-de-venta"],
+    ["cube", "Editores y configuradores", "Herramientas para que tu equipo arme contenido sin depender de un especialista, como nuestro configurador de tours.", "tourstudio"],
+    ["spark", "Software con IA dentro", "Agentes y asistentes integrados al sistema, con aprobación humana en las acciones que importan.", "suma-respuesta"],
   ],
   projectsTitle: "Sistemas que <em>ya</em> armamos.", projectsLead: "Un producto propio, proyectos de cliente y un concepto de interfaz. Cada uno dice su estado.",
   projects: ["sumaPanel", "crm", "tourstudio", "colombini"], two: true,
@@ -425,12 +445,12 @@ const web3d = () => sub({
   lead: "Desde una landing page clara hasta un portal 3D o un tour virtual. <b>Todo se abre en el navegador</b>, en computadora y en móvil.",
   servicesTitle: "De la landing al <em>mundo 3D</em>.",
   services: [
-    ["layout", "Landing pages y sitios", "Páginas rápidas y claras, pensadas para que quien llega entienda qué haces y te escriba.", "site"],
-    ["globe", "Sitios corporativos", "Rediseños y sitios completos para empresas, como el de Interiors3D.", "corp"],
-    ["cube", "Portales y experiencias 3D", "Modelos y escenas interactivas en el navegador para presentar marcas, espacios o productos.", "model"],
-    ["pin", "Tours virtuales 360°", "Recorridos con puntos de interés, hechos en colaboración con Interiors3D.", "pano"],
-    ["chat", "Asistentes dentro de la experiencia", "Un chat con IA que recomienda y lleva a la persona al producto dentro del tour.", "chat"],
-    ["spark", "Herramientas visuales con IA", "De una foto a un moodboard con estilo, paleta y materiales.", "palette"],
+    ["layout", "Landing pages y sitios", "Páginas rápidas y claras, pensadas para que quien llega entienda qué haces y te escriba.", "natalia-hero"],
+    ["globe", "Sitios corporativos", "Rediseños y sitios completos para empresas, como el de Interiors3D.", "interiors"],
+    ["cube", "Portales y experiencias 3D", "Modelos y escenas interactivas en el navegador para presentar marcas, espacios o productos.", "colombini"],
+    ["pin", "Tours virtuales 360°", "Recorridos con puntos de interés, hechos en colaboración con Interiors3D.", "febal-hotspot"],
+    ["chat", "Asistentes dentro de la experiencia", "Un chat con IA que recomienda y lleva a la persona al producto dentro del tour.", "febal"],
+    ["spark", "Herramientas visuales con IA", "De una foto a un moodboard con estilo, paleta y materiales.", "moodboard"],
   ],
   projectsTitle: "Páginas y mundos que <em>ya</em> hicimos.", projectsLead: "Sitios en línea, proyectos de cliente y un prototipo. Abre los que tienen enlace y pruébalos.",
   projects: ["interiors", "colombini", "museo", "moodboard", "tourstudio", "symbiont"], projectsFirst: true,
@@ -443,20 +463,35 @@ const ar = () => sub({
   title: "Realidad aumentada · Natem", desc: "Experiencias de realidad aumentada en el navegador: productos en tu espacio, menús en 3D, etiquetas y lugares en AR.",
   h1: "Realidad aumentada que se abre desde <em>un enlace</em>.",
   lead: "Experiencias WebAR: la persona escanea un código o abre un enlace y <b>ve el contenido sobre su entorno</b>, desde la cámara del móvil.",
-  heroRing: ["scene-sofa", "menu-ar", "scene-etiqueta", "terrain", "menu"],
+  heroRing: ["foto-ar-sofa", "menu-ar", "foto-ar-etiqueta", "terrain", "foto-ar-app", "menu"],
   servicesTitle: "AR con un propósito <em>claro</em>.",
   services: [
-    ["cube", "Productos en tu espacio", "Un mueble, un equipo o una pieza a escala real en el lugar del cliente antes de comprar.", "model"],
-    ["store", "Menús y productos en 3D", "Cada platillo o producto visto en la mesa del cliente antes de pedirlo.", "dish"],
+    ["cube", "Productos en tu espacio", "Un mueble, un equipo o una pieza a escala real en el lugar del cliente antes de comprar.", "foto-ar-sofa"],
+    ["store", "Menús y productos en 3D", "Cada platillo o producto visto en la mesa del cliente antes de pedirlo.", "menu-ar"],
     ["globe", "Turismo y museos", "Terrenos, maquetas y piezas en AR con información y panoramas 360°.", "terrain"],
-    ["scan", "AR sobre etiquetas y empaques", "Una imagen impresa que activa contenido cuando la enfocas con la cámara.", "label"],
-    ["pin", "Guías en interiores", "Rutas dibujadas sobre el suelo para orientarse en plazas, campus o recintos.", "route"],
-    ["layers", "AR junto a tu web o tu tour", "La experiencia se integra con tu sitio, tu catálogo o tu tour virtual.", "webar"],
+    ["scan", "AR sobre etiquetas y empaques", "Una imagen impresa que activa contenido cuando la enfocas con la cámara.", "foto-ar-etiqueta"],
+    ["layers", "AR junto a tu web o tu tour", "La experiencia se integra con tu sitio, tu catálogo o tu tour virtual.", "foto-qr-empaque"],
   ],
-  projectsTitle: "Proyectos en <em>AR</em>.", projectsLead: "Dos demos publicadas, que se prueban desde un móvil con cámara, y un concepto.",
+  projectsTitle: "Proyectos en <em>AR</em>.", projectsLead: "Dos demos publicadas, que se prueban desde un móvil con cámara, y un concepto ilustrado con una foto de referencia.",
   projects: ["etiqueta", "terrain", "menu"],
   final: ["¿Qué te gustaría que tus clientes <em>vieran</em> en AR?", "Cuéntanos el lugar, el producto o el recorrido. Te decimos <b>qué se puede lograr desde el navegador</b> y qué necesitaría más desarrollo.", "Hola Natem, me interesa una experiencia de realidad aumentada."],
 });
+
+const creditos = () => `${head("Créditos de imágenes · Natem", "Origen de las imágenes del sitio de Natem que no son proyectos propios.")}
+${nav("")}
+<main>
+<section class="credits">
+  <div class="wrap">
+    <div class="head rv"><span class="eyebrow">Créditos de imágenes</span><h1>De dónde vienen <em>las imágenes</em>.</h1>
+      <p class="lead">Las capturas de este sitio son de productos y proyectos en los que trabajó Natem. <b>Las fotos de esta lista no son proyectos nuestros</b>: son imágenes de referencia tomadas de la web, de Pexels, bajo su licencia de uso libre. Ilustran el tipo de solución; no muestran un trabajo hecho por Natem.</p></div>
+    <div class="credit-list">
+      ${CREDITS.map(([n, d, a, u]) => `<a class="credit card rv" href="${u}" target="_blank" rel="noopener">${img(n, d, "pos-center")}<div><h3>${d}</h3><p>Foto de ${a} · Pexels ↗</p></div></a>`).join("\n      ")}
+    </div>
+    <p class="lead" style="margin-top:28px">¿Eres autor de alguna imagen y quieres que la retiremos o corrijamos el crédito? <a class="more" href="${IG_URL}" target="_blank" rel="noopener">Escríbenos</a></p>
+  </div>
+</section>
+</main>
+${footer()}`;
 
 // ---------- Escritura ----------
 await mkdir(path.join(WEB, "img"), { recursive: true });
@@ -464,11 +499,9 @@ await mkdir(path.join(WEB, "vendor"), { recursive: true });
 for (const [name, file] of Object.entries(IMAGES)) {
   await sharp(file).resize({ width: 1280, withoutEnlargement: true }).webp({ quality: 80 }).toFile(path.join(WEB, "img", `${name}.webp`));
 }
-for (const [name, svg] of Object.entries(SCENES)) await writeFile(path.join(WEB, "img", `${name}.svg`), svg);
-for (const [name, svg] of Object.entries(ART)) await writeFile(path.join(WEB, "img", `art-${name}.svg`), svg);
 for (const f of ["three.module.js", "three.core.js"]) {
   await copyFile(path.join(NATEM, "node_modules/three/build", f), path.join(WEB, "vendor", f));
 }
-const out = { "index.html": index(), "software.html": software(), "web-3d.html": web3d(), "realidad-aumentada.html": ar() };
+const out = { "index.html": index(), "software.html": software(), "web-3d.html": web3d(), "realidad-aumentada.html": ar(), "creditos.html": creditos() };
 for (const [file, html] of Object.entries(out)) await writeFile(path.join(WEB, file), html);
-console.log(`Sitio generado: ${Object.keys(out).join(", ")} · ${Object.keys(IMAGES).length} capturas · ${Object.keys(SCENES).length + Object.keys(ART).length} ilustraciones`);
+console.log(`Sitio generado: ${Object.keys(out).join(", ")} · ${Object.keys(IMAGES).length} capturas`);
